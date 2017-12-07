@@ -40,5 +40,12 @@ bot.on('message', message => {
       message.reply('Here is your search result googled: ' + 'http://www.google.com/search?q=' + text)
     }
 
+    // True or false
+    if (message.content.indexOf('!boolean') === 0) {
+      var sayings = ['True', 'False'];
+      var rand = sayings[Math.floor(Math.random() * sayings.length)];
+      messange.reply(rand)
+    }
+
 });
 bot.login(token.token);
