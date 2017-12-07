@@ -33,6 +33,12 @@ bot.on('message', message => {
     if (message.content.indexOf('ping') === 0) {
       message.reply('pong');
     }
-    
+
+    // google command
+    if (message.content.indexOf('!google') === 0) {
+      var text = message.content.substring(8);
+      message.reply('Here is your search result googled: ' + 'http://www.google.com/search?q=' + text)
+    }
+
 });
 bot.login(token.token);
