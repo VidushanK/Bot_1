@@ -11,6 +11,11 @@ bot.on('message', message => {
     // So the bot doesn't reply to iteself
     if (message.author.bot) return;
 
+    // Hello World
+    if (message.content.indexOf('test') === 0) {
+      message.reply('Hello World!');
+    }
+
     //reverse command
     if (message.content.indexOf('!reverse') === 0) {
       var text = message.content.substring(1);
@@ -43,6 +48,13 @@ bot.on('message', message => {
     // True or false
     if (message.content.indexOf('!boolean') === 0) {
       var sayings = ['True', 'False'];
+      var rand = sayings[Math.floor(Math.random() * sayings.length)];
+      messange.reply(rand)
+    }
+
+    // coin flip
+    if (message.content.indexOf('!flip') === 0) {
+      var sayings = ['Head', 'Tails'];
       var rand = sayings[Math.floor(Math.random() * sayings.length)];
       messange.reply(rand)
     }
