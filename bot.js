@@ -58,6 +58,18 @@ bot.on('message', message => {
       var rand = sayings[Math.floor(Math.random() * sayings.length)];
       messange.reply(rand)
     }
+    
+    // Quote system
+    if (message.content.indexOf('quote') == 0) {
+      var sayings = ["Stay Hungry. Stay Foolish. ~ Steve Jobs",
+                    "Good Artists Copy, Great Artists Steal ~ Pablo Picasso",
+                    "Argue with idiots, and you become an idiot. ~ Paul Graham",
+                    "Be yourself; everyone else is already taken. ~ Oscar Wilde",
+                    "Simplicity is the ultimate sophistication. ~ Leonardo Da Vinci"]
+      var rand = sayings[Math.floor(Math.random() * sayings.length)];
+      messange.reply(rand)
+    }
+        
 
 });
 bot.login(token.token);
