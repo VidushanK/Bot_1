@@ -49,14 +49,14 @@ bot.on('message', message => {
     if (message.content.indexOf('!boolean') === 0) {
       var sayings = ['True', 'False'];
       var rand = sayings[Math.floor(Math.random() * sayings.length)];
-      messange.reply(rand)
+      message.reply(rand)
     }
 
     // coin flip
     if (message.content.indexOf('!flip') === 0) {
       var sayings = ['Head', 'Tails'];
       var rand = sayings[Math.floor(Math.random() * sayings.length)];
-      messange.reply(rand)
+      message.reply(rand)
     }
     
     // Quote system
@@ -67,9 +67,14 @@ bot.on('message', message => {
                     "Be yourself; everyone else is already taken. ~ Oscar Wilde",
                     "Simplicity is the ultimate sophistication. ~ Leonardo Da Vinci"]
       var rand = sayings[Math.floor(Math.random() * sayings.length)];
-      messange.reply(rand)
+      message.reply(rand)
     }
-        
+    
+    // Reply system
+    
+    if (message.content.indexOf('Should') == 0) {
+        message.reply('no')
+    }
 
 });
 bot.login(token.token);
